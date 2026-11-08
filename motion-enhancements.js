@@ -6,7 +6,7 @@ let cleanup=()=>{},active='';
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 function setup(){
  cleanup(); const page=document.querySelector('.page'); if(!page)return;
- active=page.classList.contains('b')?'bold':page.classList.contains('p')?'premium':'playful';
+ active=page.classList.contains('b')?'bold':page.classList.contains('p')?'premium':page.classList.contains('d')?'immersive':'playful';
  const handlers=[],listeners=[],observers=[];
  const on=(el,type,fn,opts)=>{el?.addEventListener(type,fn,opts);if(el)listeners.push(()=>el.removeEventListener(type,fn,opts))};
  const add=(el,cls)=>el?.classList.add(cls);
@@ -53,7 +53,7 @@ function setup(){
  page.querySelectorAll('.cta').forEach(el=>{el.classList.add('magnetic');on(el,'pointermove',e=>{if(reduced()||e.pointerType!=='mouse')return;const r=el.getBoundingClientRect();el.style.setProperty('--magx',`${(e.clientX-r.left-r.width/2)*.16}px`);el.style.setProperty('--magy',`${(e.clientY-r.top-r.height/2)*.2}px`)});on(el,'pointerleave',()=>{el.style.removeProperty('--magx');el.style.removeProperty('--magy')})});
  cleanup=()=>{listeners.forEach(fn=>fn());observers.forEach(o=>o.disconnect());cancelAnimationFrame(raf);progress.remove();toast.remove();motion.remove();page.querySelectorAll('.float-sticker,.motion-burst,.motion-view,.motion-toy,.service-ghost,.film-note,.cinematic-spotlight').forEach(e=>e.remove());page.querySelectorAll('.project,.cta').forEach(e=>e.removeAttribute('style'))};
 }
-const obs=new MutationObserver(()=>{const page=document.querySelector('.page');if(!page)return;const type=page.classList.contains('b')?'bold':page.classList.contains('p')?'premium':'playful';if(type!==active)setup()});
+const obs=new MutationObserver(()=>{const page=document.querySelector('.page');if(!page)return;const type=page.classList.contains('b')?'bold':page.classList.contains('p')?'premium':page.classList.contains('d')?'immersive':'playful';if(type!==active)setup()});
 obs.observe(document.querySelector('#app'),{childList:true});
 setup();
 })();
