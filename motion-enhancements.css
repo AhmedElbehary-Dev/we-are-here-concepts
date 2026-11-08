@@ -1,0 +1,53 @@
+
+/* Motion Lab v2: strong motion with reduced-motion fallback */
+.motion-progress{position:fixed;top:0;left:0;width:100%;height:4px;z-index:99999;background:#f80;transform:scaleX(0);transform-origin:left;pointer-events:none}
+.motion-toast{position:fixed;bottom:100px;left:50%;z-index:9999;transform:translate(-50%,20px);background:#111;color:white;border-radius:99px;padding:12px 20px;font:800 13px 'DM Sans',sans-serif;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+.motion-toast.show{opacity:1;transform:translate(-50%,0)}
+.motion-letter{display:inline-block;animation:letter-entry .95s both cubic-bezier(.2,1.5,.2,1);animation-delay:calc(var(--i)*45ms);transform-origin:center bottom}
+@keyframes letter-entry{0%{opacity:0;transform:translateY(110%) rotate(24deg) scale(.4)}70%{opacity:1;transform:translateY(-8%) rotate(-7deg) scale(1.08)}100%{opacity:1;transform:none}}
+.b .hero h1{transform:translate(var(--mx,0px),var(--my,0px)) rotate(calc(var(--scroll,0)*-3deg));transition:transform .15s ease-out}
+.b .manifesto h2,.b .section-head h2{transform:rotate(var(--swing,0deg));transition:transform .2s}
+.b .hero .sticker{animation:sticker-spin 5s ease-in-out infinite alternate}
+@keyframes sticker-spin{to{transform:rotate(16deg) scale(1.16)}}
+.b .hero .circle{animation:circle-pulse 4s ease-in-out infinite alternate}
+@keyframes circle-pulse{to{transform:scale(1.25) rotate(55deg);filter:hue-rotate(45deg)}}
+.motion-burst{position:absolute;right:7%;bottom:9%;z-index:5;padding:15px 20px;border:2px solid currentColor;border-radius:99px;background:#caff24;color:#111;font-weight:900;cursor:pointer;transform:rotate(-8deg);animation:burst-bob 2s ease-in-out infinite alternate}
+@keyframes burst-bob{to{transform:translateY(-16px) rotate(8deg)}}
+.b.bold-shock .hero{animation:shock .8s steps(3,end) both}
+.b.bold-shock .hero h1{animation:shock-text .9s steps(4,end) both}
+@keyframes shock{25%{filter:invert(1)}50%{filter:hue-rotate(170deg)}75%{filter:invert(1)}}
+@keyframes shock-text{20%{transform:translate(24px,-10px) skew(14deg)}40%{transform:translate(-24px,10px) skew(-14deg)}60%{transform:scale(1.15)}}
+.service-ghost{font-size:clamp(3rem,8vw,9rem);opacity:.08;position:absolute;right:6%;pointer-events:none;transition:transform .55s,opacity .55s}
+.b .service{position:relative;overflow:hidden}
+.b .service:hover .service-ghost{transform:rotate(90deg) scale(1.4);opacity:.5}
+.p .hero-art img{will-change:translate;transition:translate .15s linear}
+.p .cinematic-title{animation:cinema-float 8s ease-in-out infinite alternate}
+@keyframes cinema-float{to{letter-spacing:.035em;transform:translateY(-7px)}}
+.p .film-strip .project{transition:transform .65s cubic-bezier(.2,.8,.2,1),filter .6s}
+.p .film-strip:hover .project:not(:hover){filter:grayscale(.75) brightness(.75);transform:scale(.965)}
+.film-note{font-size:11px;letter-spacing:.25em;opacity:.6;margin:12px 0}
+.cinematic-spotlight{position:fixed;inset:0;z-index:3;pointer-events:none;background:radial-gradient(circle 190px at var(--x,-500px) var(--y,-500px),rgba(222,139,82,.10),transparent 75%);mix-blend-mode:multiply}
+.c .hero .float-sticker{position:absolute;z-index:2;left:var(--left);top:var(--top);font-size:clamp(16px,2vw,35px);font-weight:900;color:#111;background:#fff;padding:6px 12px;border:2px solid #111;border-radius:12px;transform:rotate(var(--rot));pointer-events:none;animation:sticker-dance calc(2.5s + var(--n)*.4s) ease-in-out infinite alternate}
+@keyframes sticker-dance{to{translate:0 -32px;rotate:24deg;scale:1.2}}
+.c .hero .blob{animation:blob-dance 6s ease-in-out infinite alternate}
+@keyframes blob-dance{to{transform:translate(8%,-7%) rotate(40deg) scale(1.18);border-radius:35% 65% 65% 35%}}
+.c .hero .burst{animation:burst-spin 12s linear infinite}
+@keyframes burst-spin{to{transform:rotate(360deg)}}
+.motion-toy{position:relative;min-height:90px;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;isolation:isolate}
+.toy-launch{background:#111;color:#fff;border:0;border-radius:99px;padding:18px 25px;font:900 14px 'DM Sans',sans-serif;cursor:pointer;transition:transform .25s}
+.toy-launch:hover{transform:scale(1.1) rotate(-4deg)}
+.toy-count{font:700 11px 'DM Sans',sans-serif;letter-spacing:.12em}
+.confetti{position:absolute;left:50%;top:30%;font-size:30px;color:#f50;pointer-events:none;z-index:-1;animation:confetti-boom .95s var(--delay) ease-out both}
+.confetti:nth-child(3n){color:#3449ff}.confetti:nth-child(4n){color:#f3d536}
+@keyframes confetti-boom{from{opacity:1;transform:translate(-50%,-50%) rotate(0) scale(.3)}to{opacity:0;transform:translate(-50%,-50%) rotate(var(--angle)) translateX(var(--distance)) scale(1.5)}}
+.project .imagewrap{position:relative;overflow:hidden}
+.project .cardpic{transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .7s}
+.project:hover .cardpic{transform:scale(1.13) rotate(-1deg);filter:saturate(1.25)}
+.motion-view{position:absolute;left:var(--px,50%);top:var(--py,50%);transform:translate(-50%,-50%) scale(.5);background:#fff;color:#111;border-radius:99px;padding:15px;z-index:4;opacity:0;pointer-events:none;font:800 11px 'DM Sans',sans-serif;white-space:nowrap;transition:opacity .2s,transform .2s}
+.project:hover .motion-view{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.project:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-5px)!important}
+.magnetic{transform:translate(var(--magx,0px),var(--magy,0px));transition:transform .16s ease-out}
+@media(max-width:760px){.motion-burst{right:5%;bottom:3%;font-size:10px;padding:10px}.float-sticker:nth-of-type(n+5){display:none}.motion-view{display:none}.cinematic-spotlight{display:none}}
+@media(prefers-reduced-motion:reduce){.motion-letter,.motion-burst,.float-sticker,.blob,.burst,.sticker,.circle,.cinematic-title{animation:none!important}.motion-progress{display:none}}
+body.reduced .motion-letter,body.reduced .motion-burst,body.reduced .float-sticker,body.reduced .blob,body.reduced .burst,body.reduced .sticker,body.reduced .circle,body.reduced .cinematic-title{animation:none!important}
+body.reduced .motion-progress,body.reduced .cinematic-spotlight{display:none}
