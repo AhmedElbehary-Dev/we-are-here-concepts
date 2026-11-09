@@ -158,3 +158,126 @@
 }
 body.reduced .about-reveal{opacity:1;transform:none;transition:none}
 body.reduced .about-hero h1,body.reduced .about-marquee>div,body.reduced .about-hero-orbit{animation:none}
+
+
+/* AUTHENTIC ABOUT CONTENT — Nov 2026
+   Keeps the selected Bold design, palette, and motion language.
+   The agency's original copy is laid out as distinct storytelling sections.
+*/
+.about-hero h1{font-size:clamp(58px,9.1vw,154px);max-width:1420px}
+.about-hero h1 span{
+  display:block;font-size:.76em;letter-spacing:-.09em;
+  line-height:1.05;max-width:100%;overflow-wrap:normal
+}
+.about-hero-foot{max-width:1100px}
+.about-hero-foot p{max-width:610px}
+.about-intro{background:#101010}
+.about-thinking{
+  margin-top:clamp(60px,8vw,125px);padding:clamp(26px,4vw,55px);
+  background:#221713;border:1px solid #6d4b3b;
+  display:grid;grid-template-columns:180px 1fr;gap:35px;
+  position:relative;overflow:hidden
+}
+.about-thinking::before{
+  content:"✳";position:absolute;right:-28px;top:-60px;
+  font-size:230px;line-height:1;color:#c9ab9311;
+  pointer-events:none;transform:rotate(-20deg)
+}
+.about-thinking-label{
+  color:var(--sand);font-size:11px;font-weight:900;letter-spacing:.16em;
+  align-self:start;line-height:1.65
+}
+.about-thinking>p{
+  font:clamp(23px,3.4vw,51px)/1.18 'Archivo Black',sans-serif;
+  letter-spacing:-.052em;margin:0;max-width:1050px;position:relative
+}
+.about-thinking-duo{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative}
+.about-thinking-duo span{
+  display:flex;align-items:center;min-height:92px;
+  padding:18px 22px;color:var(--brown);background:var(--sand);
+  font:800 clamp(14px,1.4vw,21px)/1.22 'DM Sans',sans-serif;
+  letter-spacing:-.025em;
+  transition:transform .3s,background .3s
+}
+.about-thinking-duo span:nth-child(2){background:#fff}
+.about-thinking-duo span:hover{transform:translateY(-5px)}
+.about-purpose{
+  background:#f4ebe3;color:var(--brown);
+  position:relative;overflow:hidden
+}
+.about-purpose .about-display{font-size:clamp(50px,7.4vw,113px);margin-bottom:60px}
+.about-purpose .about-display span{color:#b79179}
+.about-purpose-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.about-purpose-card{
+  display:flex;flex-direction:column;position:relative;min-height:500px;
+  padding:clamp(28px,3vw,52px);overflow:hidden;isolation:isolate;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1)
+}
+.about-purpose-card:hover{transform:translateY(-11px)}
+.about-purpose-card.mission{background:var(--brown);color:white}
+.about-purpose-card.vision{background:var(--sand);color:var(--brown)}
+.about-purpose-label{font-size:11px;font-weight:900;letter-spacing:.17em}
+.about-purpose-card h3{
+  font:clamp(38px,4.25vw,70px)/.96 'Archivo Black',sans-serif;
+  letter-spacing:-.07em;margin:85px 0 28px;position:relative;z-index:2
+}
+.about-purpose-card p{
+  font-size:clamp(16px,1.34vw,20px);line-height:1.65;
+  max-width:640px;margin:auto 0 0;position:relative;z-index:2
+}
+.about-purpose-card.mission p{color:#f4e8df}
+.about-purpose-mark{
+  position:absolute;top:35px;right:35px;font:120px/1 'Archivo Black',sans-serif;
+  color:inherit;opacity:.12;transform:rotate(-16deg);
+  transition:transform .7s,opacity .7s;pointer-events:none;z-index:1
+}
+.about-purpose-card:hover .about-purpose-mark{transform:rotate(32deg) scale(1.15);opacity:.22}
+.about-values .about-display{font-size:clamp(46px,7.5vw,115px)}
+.about-values-grid{align-items:stretch}
+.about-value{min-height:545px}
+.about-value h3{font-size:clamp(27px,3.2vw,48px);overflow-wrap:anywhere}
+.about-value p{font-size:clamp(13px,1.1vw,16px);line-height:1.68}
+.about-value-symbol{font-family:'DM Sans',sans-serif}
+.about-statement-intro{
+  font-size:clamp(18px,2vw,27px);line-height:1.5;
+  color:#e5cdbc;margin:0 0 34px;max-width:680px
+}
+.about-statement .about-display{font-size:clamp(49px,8vw,124px)}
+.about-statement .about-display span{color:transparent;-webkit-text-stroke:2px white}
+.about-statement .about-display em{color:var(--sand)}
+.about-statement-bottom p{max-width:680px}
+.about-statement-stamp{transform:rotate(-8deg)}
+@media(max-width:1050px){
+  .about-thinking{grid-template-columns:1fr;gap:25px}
+  .about-thinking-duo{grid-column:1}
+  .about-purpose-card{min-height:460px}
+  .about-purpose-card h3{margin-top:95px}
+  .about-value{min-height:580px}
+}
+@media(max-width:750px){
+  .about-hero h1{font-size:clamp(48px,10.8vw,88px)}
+  .about-hero h1 span{font-size:.78em;-webkit-text-stroke:2px var(--brown)}
+  .about-thinking{margin-top:70px}
+  .about-thinking-duo{grid-template-columns:1fr}
+  .about-thinking-duo span{min-height:72px}
+  .about-purpose-grid{grid-template-columns:1fr}
+  .about-purpose .about-display{font-size:clamp(42px,9vw,72px)}
+  .about-purpose-card{min-height:370px}
+  .about-purpose-card h3{font-size:clamp(35px,8vw,58px);margin:70px 0 25px}
+  .about-value{min-height:360px}
+  .about-value p{font-size:15px}
+  .about-values .about-display{font-size:clamp(39px,8vw,66px)}
+}
+@media(max-width:480px){
+  .about-hero h1{font-size:clamp(43px,10.3vw,57px)}
+  .about-hero h1 span{font-size:.76em}
+  .about-values .about-display{font-size:clamp(36px,7.8vw,47px)}
+  .about-thinking>p{font-size:clamp(23px,6.5vw,30px)}
+  .about-purpose-card{padding:27px;min-height:350px}
+  .about-purpose-mark{font-size:88px;right:16px;top:20px}
+  .about-statement .about-display{font-size:clamp(39px,9vw,57px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .about-purpose-card,.about-thinking-duo span{transition:none}
+}
+body.reduced .about-purpose-card,body.reduced .about-thinking-duo span{transition:none}
