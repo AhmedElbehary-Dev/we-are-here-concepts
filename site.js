@@ -36,7 +36,7 @@ app.innerHTML = `
   <a class="wordmark" href="#home" aria-label="We Are Here — Home">WE ARE<br>HERE<span>.</span></a>
   <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-links"><span></span><span></span><span></span></button>
   <div class="links" id="primary-links">
-    ${links.map(([label,id])=>`<a href="#${id}" class="${id==='contact'?'cta':''}">${label}${id==='contact'?' ↗':''}</a>`).join('')}
+    ${links.map(([label,id])=>`<a href="${id==='about'?'./about.html':'#'+id}" class="${id==='contact'?'cta':''}">${label}${id==='contact'?' ↗':''}</a>`).join('')}
   </div>
  </nav>
  <section class="hero" aria-labelledby="hero-title">
@@ -52,7 +52,7 @@ app.innerHTML = `
   <span class="tag reveal">01 / ABOUT US</span>
   <h2 class="reveal">HERE TO<br><span class="lime">MAKE A MARK.</span></h2>
   <p class="subline reveal">We Are Here is an Egyptian creative marketing agency bringing strategy, identity, content, and digital experiences together. We believe being present isn't enough — brands deserve to be memorable.</p>
-  <a href="#services" class="section-link reveal">WHAT WE DO ↗</a>
+  <a href="./about.html" class="section-link reveal">READ OUR FULL STORY ↗</a>
  </section>
  <section class="section-pad portfolio-section portfolio-cascade" id="portfolio" aria-labelledby="portfolio-title">
   <div class="portfolio-cascade-layout">
@@ -113,7 +113,7 @@ app.innerHTML = `
  </section>
  <section class="nextbox" id="contact"><div class="contact-heading"><span class="tag">06 / CONTACT US</span><h2 class="reveal">LET'S BUILD<br>WHAT'S NEXT.</h2><p>Got a brand to grow, a campaign to launch, or an idea too good to ignore? Let's talk.</p></div><a href="https://wearehere-eg.com/" target="_blank" rel="noopener noreferrer" class="cta">CONTACT WE ARE HERE ↗</a></section>
  <footer class="site-footer"><div class="footer-top"><a class="wordmark" href="#home">WE ARE<br>HERE<span>.</span></a><p>Creative thinking. Distinctive presence.<br>Made in Egypt, for brands going places.</p></div>
-  <div class="footer-links">${links.map(([label,id])=>`<a href="#${id}">${label}</a>`).join('')}</div>
+  <div class="footer-links">${links.map(([label,id])=>`<a href="${id==='about'?'./about.html':'#'+id}">${label}</a>`).join('')}</div>
   <div class="footer-bottom"><span>© ${new Date().getFullYear()} WE ARE HERE. ALL RIGHTS RESERVED.</span><span>CREATIVE WEBSITE CONCEPT · DEVELOPED BY AHMED ELBEHARY</span></div>
  </footer>
 </main>
