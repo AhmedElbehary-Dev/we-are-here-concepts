@@ -6,7 +6,7 @@ This repository now contains one **Bold Statement–based** long-scroll agency w
 
 ## Sections
 - Home
-- About Us
+- About Us — dedicated `about.html` page with editorial story, principles, approach, capabilities, and contact CTA
 - Services
 - Portfolio — interactive 3D card cascade (4 illustrative concept studies)
 - Studio (interactive branded poster)
@@ -25,7 +25,9 @@ The original Bold Statement layout, kinetic typography, marquee, and scroll reve
 | White | `#FFFFFF` |
 
 ## Files
-- `index.html` — static entry point
+- `index.html` — static homepage entry point
+- `about.html` — independent responsive About Us page
+- `about.css` / `about.js` — About styling, accessibility and motion
 - `site.js` — page content and interactive behavior
 - `style.css` — original Bold Statement design system (includes legacy CSS)
 - `brand.css` — approved palette, new sections, and responsive navigation
@@ -47,3 +49,7 @@ Creative implementation: Ahmed Elbehary · 2026.
 ## Portfolio cascade behavior
 
 The cascade preserves the supplied 3D folding/freefall interaction, but is embedded into the real homepage rather than forcing page-wide `overflow: hidden`. Use the mouse wheel **while hovering over the deck**, drag with the mouse, swipe horizontally on touch screens, or use the previous/next buttons and arrow keys while the deck is focused. Scrolling normally past the first/last card is intentionally allowed. A reduced-motion setting displays card transitions without animated interpolation.
+
+## About Us content status
+
+The legacy `https://wearehere-eg.com/about-us/` page was not readable during this update. The new About page is a **careful editorial draft** based on the already established We Are Here homepage messaging and service descriptions in this repository. It does **not** claim to reproduce the old About page word-for-word and deliberately avoids unverified founding years, client logos, team biographies or statistics. Replace/reconcile the editorial copy after the agency provides the original About page text. A backup of the previous homepage is retained on `backup/pre-about-page-2026-11-09`.
