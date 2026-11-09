@@ -24,7 +24,7 @@
 .about-reveal.visible{opacity:1;transform:translateY(0)}
 .about-hero{position:relative;isolation:isolate;min-height:min(880px,93svh);padding:clamp(105px,10vw,165px) 6% 88px;background:var(--sand);color:var(--brown);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 .about-hero-noise{position:absolute;z-index:-1;inset:0;background:repeating-linear-gradient(112deg,transparent 0 120px,#fff2 121px,#fff0 122px 230px);pointer-events:none}
-.about-hero-orbit{position:absolute;z-index:-1;width:min(46vw,630px);aspect-ratio:1;right:-12vw;top:7%;border:52px solid var(--brown);border-radius:50%;transform:rotate(-24deg);animation:about-orbit 12s ease-in-out infinite alternate;opacity:.91}
+.about-hero-orbit{position:absolute;z-index:-1;width:min(46vw,630px);aspect-ratio:1;right:-12vw;top:7%;border:52px solid var(--brown);border-radius:50%;transform:rotate(-24deg);animation:about-orbit 12s ease-in-out infinite alternate;opacity:.91;translate:var(--mx,0px) var(--my,0px);transition:translate .18s ease-out}
 .about-hero-orbit::before{content:"";position:absolute;inset:14%;border:12px solid #fff;border-radius:50%}
 .about-hero-content{width:min(1180px,100%);position:relative}
 .about-eyebrow{display:inline-block;font:800 12px 'DM Sans',sans-serif;letter-spacing:.18em;margin-bottom:30px}
