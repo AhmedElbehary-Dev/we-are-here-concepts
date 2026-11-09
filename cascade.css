@@ -52,7 +52,7 @@
 .portfolio-cascade-deck{
  width:clamp(280px,27vw,376px);height:clamp(390px,37vw,505px);
  position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);
- transform-style:preserve-3d;isolation:isolate
+ transform-style:preserve-3d
 }
 .portfolio-cascade .cascade-card{
  position:absolute;inset:0;border:1px solid #d6c1b266;border-radius:16px;
