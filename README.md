@@ -1,31 +1,43 @@
-# WE ARE HERE — Interactive Creative Direction Showcase
+# WE ARE HERE — Creative Marketing Agency
 
-Three distinct, motion-rich homepage concepts for **We Are Here**, an Egyptian marketing agency.
+Live: https://ahmedelbehary-dev.github.io/we-are-here-concepts/
 
-- **01 — The Bold Statement:** oversized kinetic lettering, brutalist contrast, marquee, expressive project cards and large service transitions.
-- **02 — The Creative Authority:** premium editorial typography, floating photography, considered transitions and refined portfolio storytelling.
-- **03 — The Interactive Playground:** vibrant motion, playful hover elements, interactive color palette and poster lab.
+This repository now contains one **Bold Statement–based** long-scroll agency website, replacing the five earlier Design Lab concept directions.
 
-Created as a client-facing concept study by **Ahmed Elbehary**. The concept-study images are illustrative and **are not actual agency client work**. This prototype intentionally does not claim verified client results.
+## Sections
+- Home
+- About Us
+- Services
+- Portfolio
+- Studio (interactive branded poster)
+- Blog / Ideas (upcoming editorial previews)
+- Contact Us
+- Footer
+
+## Visual direction
+The original Bold Statement layout, kinetic typography, marquee, scroll reveals, interaction effects, and editorial portfolio composition have been retained. The color palette comes from the We Are Here logo supplied for this project:
+
+| Role | Color |
+|---|---|
+| Black | `#000000` |
+| Dark Brown | `#3A1711` |
+| Warm Beige | `#C9AB93` |
+| White | `#FFFFFF` |
+
+## Files
+- `index.html` — static entry point
+- `site.js` — page content and interactive behavior
+- `style.css` — original Bold Statement design system (includes legacy CSS)
+- `brand.css` — approved palette, new sections, and responsive navigation
+- `motion-enhancements.js` and `motion-enhancements.css` — Bold motion features
+- `.nojekyll` — GitHub Pages support
+
+The old concept directions remain recoverable in the Git branch `archive/design-lab-five-concepts-2026-11-09`.
+
+## Before public launch
+The portfolio images are **illustrative concept studies**, not verified client projects. Replace them with approved case studies and real metrics. The Blog section contains upcoming topic previews, not published articles. The contact call-to-action temporarily links to the existing public We Are Here website until an approved lead form, email or booking link is supplied.
 
 ## Run locally
+No build tooling is required. Open through a static HTTP server, e.g. `npx serve .`, to test the site.
 
-This is a dependency-free static site. Open `index.html` in a browser or serve it with any static server:
-
-```bash
-python -m http.server 8080
-```
-
-## GitHub Pages
-
-1. Go to repository **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Choose branch **main**, folder **/(root)**, and click **Save**.
-4. After Pages finishes publishing, open: https://ahmedelbehary-dev.github.io/we-are-here-concepts/
-
-## Notes
-
-- Uses Unsplash-hosted illustrative images and Google Fonts. Both require an internet connection.
-- Motion can be switched off from the on-screen control. `prefers-reduced-motion` is respected.
-- Tested for basic responsive layout; final agency deployment should replace placeholders with approved assets and properly licensed creative work.
-- Direct links: `?concept=bold`, `?concept=premium`, `?concept=playful`.
+Creative implementation: Ahmed Elbehary · 2026.
