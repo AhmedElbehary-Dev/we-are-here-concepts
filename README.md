@@ -50,6 +50,10 @@ Creative implementation: Ahmed Elbehary · 2026.
 
 The cascade preserves the supplied 3D folding/freefall interaction, but is embedded into the real homepage rather than forcing page-wide `overflow: hidden`. Use the mouse wheel **while hovering over the deck**, drag with the mouse, swipe horizontally on touch screens, or use the previous/next buttons and arrow keys while the deck is focused. Scrolling normally past the first/last card is intentionally allowed. A reduced-motion setting displays card transitions without animated interpolation.
 
-## About Us content status
+## About Us: approved source copy
 
-The legacy `https://wearehere-eg.com/about-us/` page was not readable during this update. The new About page is a **careful editorial draft** based on the already established We Are Here homepage messaging and service descriptions in this repository. It does **not** claim to reproduce the old About page word-for-word and deliberately avoids unverified founding years, client logos, team biographies or statistics. Replace/reconcile the editorial copy after the agency provides the original About page text. A backup of the previous homepage is retained on `backup/pre-about-page-2026-11-09`.
+The user provided the company's actual About Us copy in the conversation. The `about.html` page now uses that copy for the company declaration, multidisciplinary positioning, mission, vision, values (Clarity, Presence, Creativity), and the guiding question about lasting presence.
+
+The editorial treatment uses headline emphasis and layout changes but retains the source messages and substantive wording. One duplicate line under the supplied Vision ("And to make that meaning felt by the audiences that matter most.") was already included in Mission, and was intentionally omitted from the Vision panel to avoid repetition. No founding date, team member names, client figures or unsupported achievements were added.
+
+The About CTA uses `info@wearehere-eg.com`, shown in the old website screenshot supplied by the user. The previous version of the About page remains on `backup/pre-authentic-about-copy-2026-11-09`.
