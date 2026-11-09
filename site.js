@@ -54,13 +54,39 @@ app.innerHTML = `
   <p class="subline reveal">We Are Here is an Egyptian creative marketing agency bringing strategy, identity, content, and digital experiences together. We believe being present isn't enough — brands deserve to be memorable.</p>
   <a href="#services" class="section-link reveal">WHAT WE DO ↗</a>
  </section>
- <section class="section-pad portfolio-section" id="portfolio">
-  <div class="section-head reveal"><div><span class="tag">02 / PORTFOLIO & CREATIVE EXPLORATIONS</span><h2>WORK THAT<br>HITS DIFFERENT.</h2></div>
-  <p class="subline">A preview of our visual direction. These are illustrative concept studies, not client case studies.</p></div>
-  <div class="workgrid">
-   ${cases.map((p,i)=>`<article class="project reveal tilt"><div class="imagewrap"><img class="cardpic" src="${p.image}" loading="lazy" alt="Illustrative ${p.title.toLowerCase()} creative direction"><span class="image-label">CONCEPT STUDY / 0${i+1}</span></div><h3>${p.title}</h3><p>${p.category}</p></article>`).join('')}
+ <section class="section-pad portfolio-section portfolio-cascade" id="portfolio" aria-labelledby="portfolio-title">
+  <div class="portfolio-cascade-layout">
+   <div class="portfolio-cascade-copy">
+    <span class="tag reveal">02 / PORTFOLIO · CREATIVE EXPLORATIONS</span>
+    <h2 id="portfolio-title" class="reveal">WORK<br>THAT <span>HITS</span><br>DIFFERENT.</h2>
+    <p class="portfolio-cascade-intro reveal">Ideas worth a closer look. Move through a collection of creative directions — one card, one bold idea at a time.</p>
+    <div class="portfolio-cascade-actions reveal">
+     <button type="button" class="portfolio-cascade-primary" id="cascadeExplore">EXPLORE THE DECK <span aria-hidden="true">↗</span></button>
+     <div class="portfolio-cascade-arrows" aria-label="Portfolio navigation">
+      <button type="button" id="cascadePrev" aria-label="Previous portfolio card">←</button>
+      <button type="button" id="cascadeNext" aria-label="Next portfolio card">→</button>
+     </div>
+    </div>
+    <p class="portfolio-cascade-hint">SCROLL OVER THE CARDS · DRAG · USE ARROW KEYS</p>
+    <p class="portfolio-cascade-disclaimer">Creative concept studies for demonstration — not client case studies. Approved work can replace these cards.</p>
+   </div>
+   <div class="portfolio-cascade-stage" id="cascadeStage" tabindex="0" role="region" aria-roledescription="3D portfolio card deck" aria-label="Interactive portfolio: use arrow keys to browse">
+    <div class="portfolio-cascade-deck" id="cascadeDeck">
+     ${cases.map((p,i)=>`<article class="cascade-card" data-index="${i}" role="button" aria-label="Focus portfolio concept ${i+1}: ${p.title}" tabindex="-1">
+      <img src="${p.image}" alt="Illustrative artwork for ${p.title}" loading="lazy" draggable="false">
+      <div class="cascade-shade"></div>
+      <div class="cascade-card-top"><span>0${i+1} / 0${cases.length}</span><span>CONCEPT STUDY</span></div>
+      <div class="cascade-card-bottom"><span>WE ARE HERE / EXPLORATION 0${i+1}</span><h3>${p.title}</h3><p>${p.category}</p></div>
+     </article>`).join('')}
+    </div>
+   </div>
+   <div class="portfolio-cascade-rail">
+    <div class="portfolio-cascade-index"><strong id="cascadeIndex">01</strong><span> / 0${cases.length}</span></div>
+    <div class="portfolio-cascade-track"><span id="cascadeTimelineDot"></span></div>
+    <span class="portfolio-cascade-rail-label" id="cascadeChapter">THE ART OF ATTENTION</span>
+   </div>
   </div>
-  <p class="portfolio-note">Real client work and approved case studies can be added as the portfolio grows.</p>
+  <div class="portfolio-cascade-bottom"><span>WE ARE HERE / PORTFOLIO IN MOTION</span><span id="cascadeLive" aria-live="polite">01 / 0${cases.length} — ${cases[0].title}</span><span>CSS 3D CASCADE · MOTION-LED PRESENTATION</span></div>
  </section>
  <section class="services section-pad" id="services">
   <div class="tag reveal">03 / SERVICES</div>
