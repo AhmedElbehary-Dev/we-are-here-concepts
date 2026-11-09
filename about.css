@@ -281,3 +281,12 @@ body.reduced .about-hero h1,body.reduced .about-marquee>div,body.reduced .about-
   .about-purpose-card,.about-thinking-duo span{transition:none}
 }
 body.reduced .about-purpose-card,body.reduced .about-thinking-duo span{transition:none}
+
+
+.about-contact-email{
+ display:table;margin-top:26px;color:var(--sand);
+ font:700 clamp(14px,1.45vw,20px) 'DM Sans',sans-serif;
+ border-bottom:1px solid currentColor;padding-bottom:7px;
+ transition:color .25s
+}
+.about-contact-email:hover{color:#fff}
